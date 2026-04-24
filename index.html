@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #topic {
+            color: rgb(10, 163, 228);
+            font-family: 'Franklin Gothic Medium';
+            letter-spacing: normal;
+
+        }
+
+        nav {
+            /*background-color: rgb(9, 8, 7);*/
+            background-color: #1e293b;
+            color: white;
+            padding: 10px;
+            display: flex;
+            /*= sab ek line me aa jaayenge*/
+            justify-content: space-between;
+            /*= left me logo, right me links*/
+            align-items: center;
+            /*= vertically center*/
+
+        }
+
+        a {
+            color: whitesmoke;
+            margin: 10px;
+            text-decoration: none;
+            font-size: large;
+            font-family: 'Franklin Gothic Medium';
+        }
+
+        #home {
+            margin-bottom: 10px;
+        }
+
+        #hero-sec {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            height:  80px 20px;
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+        }
+
+        #hero-sec h1 {
+            color: white;
+            font-size: 50px;
+        }
+
+        #hero-sec p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: white;
+            color: #2563eb;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+
+        }
+
+        button:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        #features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 60px;
+
+            background: linear-gradient(to right, #eef2ff, #f8fafc);
+        }
+
+        .box {
+            background-color: white;
+            padding: 25px;
+            width: 220px;
+            border-radius: 12px;
+            text-align: center;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+
+        }
+
+        .box:hover {
+            transform: translateY(-15px);
+        }
+
+        h3 {
+            color: #2563eb;
+        }
+
+        h1 {
+            color: #111827;
+            font-size: 40px;
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: white;
+        }
+
+        /* top section */
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        /* links vertical */
+        .footer-top a {
+            display: block;
+            margin: 5px 0;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* bottom section */
+        .footer-bottom {
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-top div {
+            max-width: 250px;
+        }
+
+        .learn-head {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #2563eb;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .learn-head h2 {
+            font-size: 35px;
+            color: #111827;
+        }
+
+        .sub {
+            color: gray;
+            margin-top: 10px;
+        }
+
+        .courses {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #f1f5f9, #e0e7ff);
+
+        }
+
+        .course-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .price {
+            font-size: 22px;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* .tags {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #2563eb;
+        } */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tags span {
+            background-color: #e0e7ff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .tags span:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .learn-head h2,
+        .courses h2 {
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+
+            /* Navbar */
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #home {
+                margin-top: 10px;
+            }
+
+            /* Hero */
+            #hero-sec {
+                height: auto;
+                padding: 40px 20px;
+            }
+
+            #hero-sec h1 {
+                font-size: 30px;
+            }
+
+            /* Features */
+            #features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 90%;
+            }
+
+            /* Courses */
+            .course-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course-card {
+                width: 90%;
+            }
+
+            /* Footer */
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Planet of Skills</title>
+
+</head>
+
+<body>
+
+    <nav>
+        <h1 id="topic">Learn MERN</h1>
+        <div id="home">
+            <a href="#hero-sec">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+            <a href="#curriculum">About us</a>
+        </div>
+    </nav>
+    <section id="hero-sec">
+        <h1>“Learn MERN in 60 Days”</h1>
+        <p>"Become a full stack developer"</p>
+        <button>Get Started</button>
+    </section>
+
+    <section class="learn-head" id="curriculum">
+        <p class="tag">📘 CURRICULUM</p>
+        <h2>What You’ll Learn</h2>
+        <p class="sub">A simple path from basics to full stack</p>
+    </section>
+
+    <section id="features">
+
+        <div class="box">
+            <h3>HTML + CSS Foundations</h3>
+            <p>
+                Build strong web fundamentals. Learn semantic HTML, modern CSS,
+                Flexbox, Grid, and responsive design to create websites that
+                work perfectly on all devices.
+            </p>
+            <p class="tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Flexbox</span>
+                <span>Grid</span>
+                <span>Responsive</span>
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>JavaScript (ES6+)</h3>
+            <p>
+                Master the language of the web. Learn variables, functions,
+                DOM manipulation, APIs, and modern JavaScript concepts used
+                in real-world applications.
+            </p>
+            <p class="tags">
+                <span>ES6+</span>
+                <span>DOM</span>
+                <span>APIs</span>
+                <span>Promises</span>
+                <span>OOP</span>
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>MERN Stack Development</h3>
+            <p>
+                Learn full stack development using MongoDB, Express, React,
+                and Node.js. Build complete applications from frontend to backend.
+            </p>
+            <p class="tags">
+                <span>MongoDB</span>
+                <span>Express</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>REST API</span>
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Projects & Deployment</h3>
+            <p>
+                Apply your skills by building real-world projects and deploy them
+                online. Learn GitHub, hosting, and portfolio creation to showcase your work.
+            </p>
+            <p class="tags">
+                <span>GitHub</span>
+                <span>Hosting</span>
+                <span>Portfolio</span>
+                <span>Deployment</span>
+                <span>CI/CD</span>
+            </p>
+        </div>
+
+    </section>
+
+    <section class="courses" id="courses">
+
+        <h2>Pick Your Learning Path</h2>
+        <p>Structured courses with real projects & job-ready skills</p>
+
+        <div class="course-container">
+
+            <div class="course-card">
+                <h3>HTML, CSS & JS</h3>
+                <p>Beginner friendly course</p>
+                <p class="price">₹499</p>
+                <button>Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <h3>Complete MERN Stack</h3>
+                <p>Full stack development</p>
+                <p class="price">₹999</p>
+                <button>Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <h3>Interview Prep</h3>
+                <p>Crack developer jobs</p>
+                <p class="price">₹699</p>
+                <button>Enroll Now</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer id="contact">
+        <div class="footer-top">
+            <div>
+                <h2>Skills Planet</h2>
+                <p>Learn full stack development easily.</p>
+            </div>
+
+            <div>
+                <a href="#hero-sec">Home</a>
+                <a href="#courses">Courses</a>
+                <a href="#contact">Contact</a>
+                <a href="#curriculum">About</a>
+            </div>
+
+            <div>
+                <p>Email: support@learnmern.com</p>
+                <p>Phone: 1800123123</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Skills Planet. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+
+</body>
